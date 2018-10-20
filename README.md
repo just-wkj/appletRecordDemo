@@ -6,4 +6,4 @@
 2. 添加录音时长
 
 效果如下:
-![](./app.png)
+![](https://raw.githubusercontent.com/just-wkj/appletRecordDemo/master/app.png)
