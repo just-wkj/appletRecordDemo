@@ -96,7 +96,8 @@ Page({
     stopRecord: function () {
         console.log('结束录音')
         this.setData({
-            time: (this.getCurTime() - this.data.startTime) / 1000 //计算录音时长
+            time: (this.getCurTime() - this.data.startTime) / 1000, //计算录音时长
+            startTime:0 //清空初始录音时长
         })
         this.recorderManager.stop()
     },
