@@ -27,7 +27,7 @@ Page({
 
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.onError((res) => {
-      that.tip("播放录音失败！")
+      that.tip("播放录音11失败！")
     })
 
   },
@@ -124,9 +124,10 @@ Page({
     var that = this;
     var src = this.data.src;
     if (src == '') {
-      this.tip("请先录音！")
+      this.tip("请先录音!！")
       return;
     }
+    console.log(this.data.src)
     this.innerAudioContext.src = this.data.src;
     this.innerAudioContext.play()
   }
