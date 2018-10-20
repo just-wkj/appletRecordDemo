@@ -1,12 +1,14 @@
-<view>
-  <button bindtap='startRecordAac' type='primary'>录音开始（aac）</button>
+<!--<view>-->
+  <!--<button bindtap='startRecordAac' type='primary'>录音开始（aac）</button>-->
+<!--</view>-->
+<view style="margin-top:500rpx">
+  <button type='primary' bindlongpress="startRecordMp3" bindtouchend="stopRecord" bindtouchcancel="stopRecord">
+    长按开始录音
+  </button>
 </view>
-<view>
-  <button bindtap='startRecordMp3' type='primary'>录音开始（mp3）</button>
-</view>
-<view>
-  <button bindtap='stopRecord' type='primary'>录音结束</button>
-</view>
-<view>
-  <button bindtap='playRecord' type='primary'>播放录音</button>
+<!--<view>-->
+  <!--<button bindtap='stopRecord' type='primary'>录音结束</button>-->
+<!--</view>-->
+<view wx:if="{{src}}">
+  <button bindtap='playRecord' type='primary'>点击播放录音 时长:{{time}}秒</button>
 </view>

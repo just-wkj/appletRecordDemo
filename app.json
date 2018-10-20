@@ -1,8 +1,8 @@
 {
   "pages":[
-    "pages/welcome/index",
     "pages/newMusic/index",
-    "pages/oldMusic/index"    
+    "pages/welcome/index",
+    "pages/oldMusic/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
