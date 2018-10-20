@@ -9,6 +9,6 @@
 <!--<view>-->
   <!--<button bindtap='stopRecord' type='primary'>录音结束</button>-->
 <!--</view>-->
-<view wx:if="{{src}}">
+<view wx:if="{{src && time}}">
   <button bindtap='playRecord' type='primary'>点击播放录音 时长:{{time}}秒</button>
 </view>

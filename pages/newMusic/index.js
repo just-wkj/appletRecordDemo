@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        max_time:10000,//录音时长最大值 10s 默认十分钟
         src: '', //录音文件
         time: 0,//录音时长
         startTime: 0,//录音开始时间
@@ -83,10 +84,12 @@ Page({
         console.log('开始录音')
         this.setData({
             src: '',
+            time:0,
             startTime: this.getCurTime()
         })
         this.recorderManager.start({
-            format: 'mp3'
+            format: 'mp3',
+            duration:this.data.max_time
         });
     },
 
@@ -95,8 +98,12 @@ Page({
      */
     stopRecord: function () {
         console.log('结束录音')
+        var time = (this.getCurTime() - this.data.startTime)
+        if(time > this.data.max_time){
+            time = this.data.max_time
+        }
         this.setData({
-            time: (this.getCurTime() - this.data.startTime) / 1000, //计算录音时长
+            time: time/1000, //计算录音时长
             startTime:0 //清空初始录音时长
         })
         this.recorderManager.stop()
